@@ -1,4 +1,4 @@
 default:
-	javac -d ./classes JWarsMain.java
+	javac -sourcepath ./src -d ./classes ./src/JWarsMain.java
 run:
 	java -cp ./classes JWarsMain
