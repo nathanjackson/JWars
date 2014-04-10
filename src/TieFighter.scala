@@ -2,17 +2,16 @@ import javax.swing._
 import java.awt._
 import java.util.Random
 
-/** Tie bomber class for jWars project */
-class TieBomber(lyp: Int) extends Enemy(lyp) {
+/** Tie Fighter class for jWars project */
+class TieFighter(lyp: Int) extends Enemy(lyp) {
 
-	pointValue = 10
-
-	private val imgIcon = new ImageIcon("tiebomber.gif")
+	pointValue = 5
+	private val imgIcon = new ImageIcon("tiefighter.gif")
 	setEntityWidth(imgIcon.getIconWidth())
 	setEntityHeight(imgIcon.getIconHeight())
 
-	/** Paint the tie bomber on the screen
-	 *  @param g graphics component to paint on */
+	/** Paint the tie fighter on the panel
+	 *  @param g graphics object to paint on */
 	override def paintComponent(g: Graphics) = {
 		if(getXpos() == -1 && getYpos() == -1) {
 			var generator = new Random(System.nanoTime())

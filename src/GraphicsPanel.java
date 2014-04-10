@@ -62,7 +62,7 @@ public class GraphicsPanel extends JPanel {
 			for(Entity et : entityList) {
 				if(et instanceof Enemy) {
 					Enemy en = (Enemy) et;
-					en.setLowestYPos(getHeight() - 150);
+					en.lowestYpos_$eq(getHeight() - 150);
 				}
 			}
 		}
@@ -161,12 +161,12 @@ public class GraphicsPanel extends JPanel {
 			if(e1 instanceof Enemy) {
                                 Enemy en = (Enemy) e1;
 				entityList.add(new Explosion(en));
-                                getXwing().incrementScore(en.getPointValue());
+                                getXwing().incrementScore(en.pointValue());
                         }
                         else if(e2 instanceof Enemy) {
                                 Enemy en = (Enemy) e2;
 				entityList.add(new Explosion(en));
-                                getXwing().incrementScore(en.getPointValue());
+                                getXwing().incrementScore(en.pointValue());
                         }
 	
 
