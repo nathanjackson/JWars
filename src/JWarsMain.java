@@ -42,7 +42,7 @@ public class JWarsMain extends JFrame {
 					System.exit(0);		
 				}
 				graphicsPane.repaint();
-				controlPane.getScoreText().setText(Integer.toString(graphicsPane.getXwing().getScore()));
+				controlPane.getScoreText().setText(Integer.toString(graphicsPane.getXwing().score()));
 				if(graphicsPane.getNumberOfEnemies() < 3) {
 					if(waitStatus < waitToCreateEnemy) {
 						waitStatus++;
