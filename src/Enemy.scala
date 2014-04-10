@@ -5,13 +5,13 @@ import java.util.Random
 /** Enemy class for jWars project.  All enemies will extend this class */
 class Enemy(lyp: Int) extends Entity() {
 	
-	var pointValue = 0;
-	var lowestYpos = lyp;
+	var pointValue = 0
+	var lowestYpos = lyp
 
-	setXpos(-1);
-	setYpos(-1);
-	setEntityWidth(50);
-	setEntityHeight(50);
+	setXpos(-1)
+	setYpos(-1)
+	setEntityWidth(50)
+	setEntityHeight(50)
 
 	var run = {
 		val generator = new Random(System.nanoTime())

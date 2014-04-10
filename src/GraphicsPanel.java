@@ -111,7 +111,7 @@ public class GraphicsPanel extends JPanel {
 
 			else if(e instanceof Explosion) {
 				Explosion ex = (Explosion) e;
-				if(ex.getEntityWidth() > ex.getSource().getEntityWidth()) {
+				if(ex.getEntityWidth() > ex.source().getEntityWidth()) {
 					entityList.remove(e);
 				}
 			}
