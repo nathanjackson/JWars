@@ -7,6 +7,7 @@ To see a demonstration of my project, here is a YouTube video: http://youtu.be/4
 
 To build:
 Requires:
+	scala
 	JRE 6 or greater
 	JDK 6 or greater
 	make
@@ -24,5 +25,3 @@ No loss condition and a very simple win condition of 300 points
 Maybe add a main menu?
 Remove the bottom panel and fire button.  Draw the score on the actual field of play?
 Fixed sprites
-
-Have fun!
