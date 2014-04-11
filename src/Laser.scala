@@ -2,31 +2,33 @@ import javax.swing._
 import java.awt._
 
 /** Laser class for the jWars project */
-class Laser(src: Friendly) extends Entity() {
+class Laser(src: Friendly) extends Entity {
 
 	private val firingShip = src
 
-	setXpos(-100);
-	setYpos(-100);
+	xPos = -100
+	yPos = -100
 
 	/** Paint the laser on the graphics component
 	 *  @param g graphics object */
 	override def paintComponent(g: Graphics) = {
-		if(getXpos() == -100) {
-			setXpos(firingShip.getXpos() + firingShip.getEntityWidth() / 2);
+		if(xPos == -100) {
+			xPos = firingShip.xPos + firingShip.entityWidth / 2
 		}
-		if(getYpos() == -100) {
-			setYpos(firingShip.getYpos());
+		if(yPos == -100) {
+			yPos = firingShip.yPos
 		}
 
-		g.setColor(Color.GREEN);
-		g.fillRect(getXpos(), getYpos(), 2, 20);
+		updateLocations()
+
+		g.setColor(Color.GREEN)
+		g.fillRect(xPos, yPos, 2, 20)
 	}
 
 	/** Move the laser up the screen */
 	def move() = {
-		if(getYpos() != -100)
-			setYpos(getYpos() - 5);
+		if(yPos != -100)
+			yPos = yPos - 5
 	}
 
 }

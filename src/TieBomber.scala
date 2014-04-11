@@ -8,19 +8,20 @@ class TieBomber(lyp: Int) extends Enemy(lyp) {
 	pointValue = 10
 
 	private val imgIcon = new ImageIcon("tiebomber.gif")
-	setEntityWidth(imgIcon.getIconWidth())
-	setEntityHeight(imgIcon.getIconHeight())
+	entityWidth = imgIcon.getIconWidth()
+	entityHeight = imgIcon.getIconHeight()
 
 	/** Paint the tie bomber on the screen
 	 *  @param g graphics component to paint on */
 	override def paintComponent(g: Graphics) = {
-		if(getXpos() == -1 && getYpos() == -1) {
+		if(xPos == -1 && yPos == -1) {
 			var generator = new Random(System.nanoTime())
-			setXpos(generator.nextInt(600) + 1)
+			xPos = generator.nextInt(600) + 1
 			generator = new Random(System.nanoTime())
-			setYpos(generator.nextInt(299) + 1)
+			yPos = generator.nextInt(299) + 1
 		}
 
-		g.drawImage(imgIcon.getImage(), getXpos(), getYpos(), null, null)
+		g.drawImage(imgIcon.getImage(), xPos, yPos, null, null)
+		updateLocations()
 	}
 }

@@ -7,15 +7,15 @@ class Friendly extends Entity {
 	private var imgIcon = new ImageIcon("xwing.gif")
 	var score = 0	
 
-	setEntityWidth(imgIcon.getIconWidth())
-	setEntityHeight(imgIcon.getIconHeight())
-	setXpos(-1)
-	setYpos(-1)
+	entityWidth = imgIcon.getIconWidth()
+	entityHeight = imgIcon.getIconHeight()
+	xPos = -1
+	yPos = -1
 
 	/** Paint the fighter on the screen. */
 	@Override
 	override def paintComponent(g: Graphics) =
-		g.drawImage(imgIcon.getImage(),getXpos(),getYpos(),null,null)
+		g.drawImage(imgIcon.getImage(),xPos,yPos,null,null)
 
 	/** Increment the score by a given amount 
 	 *  @param amt amount to increment */

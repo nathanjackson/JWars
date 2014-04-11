@@ -31,11 +31,11 @@ public class GraphicsPanel extends JPanel {
 		
 		this.animate();
 
-		if(xwing.getXpos() == -1) {
-			xwing.setXpos((this.getWidth() / 2) - xwing.getEntityWidth() / 2);
+		if(xwing.xPos() == -1) {
+			xwing.xPos_$eq((this.getWidth() / 2) - xwing.entityWidth() / 2);
 		}
-		if(xwing.getYpos() == -1) {
-			xwing.setYpos(this.getHeight() - xwing.getEntityHeight());
+		if(xwing.yPos() == -1) {
+			xwing.yPos_$eq(this.getHeight() - xwing.entityHeight());
 		}
 	
 		g.setColor(Color.BLACK);
@@ -58,7 +58,7 @@ public class GraphicsPanel extends JPanel {
 		}
 
 		public void componentResized(ComponentEvent e) {
-			xwing.setYpos(-1);
+			xwing.yPos_$eq(-1);
 			for(Entity et : entityList) {
 				if(et instanceof Enemy) {
 					Enemy en = (Enemy) et;
@@ -74,14 +74,14 @@ public class GraphicsPanel extends JPanel {
 
 	/** Move the onscreen ship to the left */
 	public void moveShipLeft() {
-		if(!(xwing.getXpos() <=0))
-			xwing.setXpos(xwing.getXpos() - 7);
+		if(!(xwing.xPos() <=0))
+			xwing.xPos_$eq(xwing.xPos() - 7);
 	}
 
 	/** Move the onscreen ship to the right */
 	public void moveShipRight() {
-		if(!(xwing.getXpos() >= this.getWidth() - xwing.getEntityWidth()))
-			xwing.setXpos(xwing.getXpos() + 7);
+		if(!(xwing.xPos() >= this.getWidth() - xwing.entityWidth()))
+			xwing.xPos_$eq(xwing.xPos() + 7);
 	}
 
 	/** Method called to animate the onscreen objects */
@@ -104,14 +104,14 @@ public class GraphicsPanel extends JPanel {
 			else if(e instanceof Laser) {
 				Laser l = (Laser) e;
 				l.move();
-				if(l.getYpos() <= -1 && l.getYpos() >= -10) {
+				if(l.yPos() <= -1 && l.yPos() >= -10) {
 					entityList.remove(e);
 				}
 			}
 
 			else if(e instanceof Explosion) {
 				Explosion ex = (Explosion) e;
-				if(ex.getEntityWidth() > ex.source().getEntityWidth()) {
+				if(ex.entityWidth() > ex.source().entityWidth()) {
 					entityList.remove(e);
 				}
 			}
@@ -146,7 +146,7 @@ public class GraphicsPanel extends JPanel {
 		if(e1 == e2) {
 			return false;
 		}
-		if(e1.getCenterPoint().distance(e1.getBottomMostPoint()) + e2.getCenterPoint().distance(e2.getBottomMostPoint()) > e1.getCenterPoint().distance(e2.getCenterPoint())) {
+		if(e1.center().distance(e1.bottomSide()) + e2.center().distance(e2.bottomSide()) > e1.center().distance(e2.center())) {
 			processCollision(e1,e2);
 			return true;
 		}

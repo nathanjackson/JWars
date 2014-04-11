@@ -3,15 +3,15 @@ import java.awt._
 import java.util.Random
 
 /** Enemy class for jWars project.  All enemies will extend this class */
-class Enemy(lyp: Int) extends Entity() {
+class Enemy(lyp: Int) extends Entity {
 	
 	var pointValue = 0
 	var lowestYpos = lyp
 
-	setXpos(-1)
-	setYpos(-1)
-	setEntityWidth(50)
-	setEntityHeight(50)
+	xPos = -1
+	yPos = -1
+	entityHeight = 50
+	entityWidth = 50
 
 	var run = {
 		val generator = new Random(System.nanoTime())
@@ -24,26 +24,26 @@ class Enemy(lyp: Int) extends Entity() {
 	}
 	
 	override def paintComponent(g: Graphics) = {
-		if(getXpos() == -1 && getYpos() == -1) {
+		if(xPos == -1 && yPos == -1) {
 			var generator = new Random(System.nanoTime())
-			setXpos(generator.nextInt(600) + 1)
+			xPos = generator.nextInt(600) + 1
 			generator = new Random(System.nanoTime())
-			setYpos(generator.nextInt(299) + 1)
+			yPos = generator.nextInt(299) + 1
 		}
 
-		g.setColor(Color.RED)
-		g.fillRect(getXpos(),getYpos(),getEntityWidth(),getEntityHeight())
+		//g.Color(Color.RED)
+		g.fillRect(xPos,yPos,entityWidth,entityHeight)
 	}
 
 	def move(parentWidth: Int) = {
 		// First, check to ensure that the ball isn't at an edge.
-		if(getXpos() < (0-run) || getXpos() > (parentWidth - getEntityWidth()))
+		if(xPos < (0-run) || xPos > (parentWidth - entityWidth))
 			run = -run
-		if(getYpos() < (0-rise) || getYpos() > (lowestYpos - getEntityHeight()))
+		if(yPos < (0-rise) || yPos > (lowestYpos - entityHeight))
             		rise = -rise
 
-		setXpos(getXpos() + run)
-		setYpos(getYpos() + rise)
+		xPos = xPos + run
+		yPos = yPos + rise
 	}
 
 }
