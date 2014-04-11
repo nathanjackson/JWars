@@ -2,7 +2,7 @@ import javax.swing._
 import java.awt._
 
 /** Explosion class for jWars */
-class Explosion(src: Entity) extends Entity() {
+class Explosion(src: Entity) extends Entity {
 	
 	var source = src
 	var currentColor = Color.ORANGE

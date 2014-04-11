@@ -22,7 +22,7 @@ public class JWarsMain extends JFrame {
 
 		controlPane = new ControlPanel();
 		
-		controlPane.getFireButton().addActionListener(new ActionListener() {
+		controlPane.fireButton().addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
 				graphicsPane.addLaser(new Laser(graphicsPane.getXwing()));	
@@ -36,13 +36,13 @@ public class JWarsMain extends JFrame {
 			
 			private int waitStatus = 0;	
 			public void actionPerformed(ActionEvent e) {
-				if(Integer.parseInt(controlPane.getScoreText().getText()) >= 300) {
+				if(Integer.parseInt(controlPane.scoreText().getText()) >= 300) {
 					animationTimer.stop();
 					JOptionPane.showMessageDialog(null,"Score limit reached (300), congratulations!","Winner!",JOptionPane.INFORMATION_MESSAGE);
 					System.exit(0);		
 				}
 				graphicsPane.repaint();
-				controlPane.getScoreText().setText(Integer.toString(graphicsPane.getXwing().score()));
+				controlPane.scoreText().setText(Integer.toString(graphicsPane.getXwing().score()));
 				if(graphicsPane.getNumberOfEnemies() < 3) {
 					if(waitStatus < waitToCreateEnemy) {
 						waitStatus++;
