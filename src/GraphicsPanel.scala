@@ -62,10 +62,10 @@ class GraphicsPanel extends JPanel {
 	}
 
 	/** Move the onscreen ship to the left */
-	def moveShipLeft() = if(!(xwing.xPos <= 0)) xwing.xPos = (xwing.xPos - 7);
+	def moveShipLeft() = if(!(xwing.xPos <= 0)) xwing.xPos = (xwing.xPos - 3);
 
 	/** Move the onscreen ship to the right */
-	def moveShipRight() = if(!(xwing.xPos >= this.getWidth() - xwing.entityWidth)) xwing.xPos = xwing.xPos + 7
+	def moveShipRight() = if(!(xwing.xPos >= this.getWidth() - xwing.entityWidth)) xwing.xPos = xwing.xPos + 3
 
 	/** Method called to animate the onscreen objects */
 	def animate() = entityList.foreach(e => {

@@ -26,7 +26,7 @@ class Laser(src: Friendly) extends Entity {
 	/** Move the laser up the screen */
 	def move() = {
 		if(yPos != -100)
-			yPos = yPos - 5
+			yPos = yPos - 15
 	}
 
 }
