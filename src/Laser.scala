@@ -12,12 +12,10 @@ class Laser(src: Friendly) extends Entity {
 	/** Paint the laser on the graphics component
 	 *  @param g graphics object */
 	override def paintComponent(g: Graphics) = {
-		if(xPos == -100) {
+		if(xPos == -100)
 			xPos = firingShip.xPos + firingShip.entityWidth / 2
-		}
-		if(yPos == -100) {
+		if(yPos == -100)
 			yPos = firingShip.yPos
-		}
 
 		updateLocations()
 

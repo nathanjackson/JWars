@@ -25,7 +25,7 @@ public class JWarsMain extends JFrame {
 		controlPane.fireButton().addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
-				graphicsPane.addLaser(new Laser(graphicsPane.getXwing()));	
+				graphicsPane.addLaser(new Laser(graphicsPane.xwing()));	
 				controlPane.setFocusable(true);
 			}
 		});
@@ -42,8 +42,8 @@ public class JWarsMain extends JFrame {
 					System.exit(0);		
 				}
 				graphicsPane.repaint();
-				controlPane.scoreText().setText(Integer.toString(graphicsPane.getXwing().score()));
-				if(graphicsPane.getNumberOfEnemies() < 3) {
+				controlPane.scoreText().setText(Integer.toString(graphicsPane.xwing().score()));
+				if(graphicsPane.numberOfEnemies() < 3) {
 					if(waitStatus < waitToCreateEnemy) {
 						waitStatus++;
 					}
@@ -90,7 +90,7 @@ public class JWarsMain extends JFrame {
 					moveRightTimer.start();
 				}
 				else if(e.getKeyCode() == KeyEvent.VK_SPACE) {
-					graphicsPane.addLaser(new Laser(graphicsPane.getXwing()));		
+					graphicsPane.addLaser(new Laser(graphicsPane.xwing()));		
 				}
 			}
 

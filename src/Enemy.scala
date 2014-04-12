@@ -31,7 +31,7 @@ class Enemy(lyp: Int) extends Entity {
 			yPos = generator.nextInt(299) + 1
 		}
 
-		//g.Color(Color.RED)
+		g.setColor(Color.RED)
 		g.fillRect(xPos,yPos,entityWidth,entityHeight)
 	}
 
