@@ -1,6 +1,6 @@
 import javax.swing._
 import java.awt._
-import java.util.Random
+import scala.util.Random
 
 /** Tie Fighter class for jWars project */
 class TieFighter(lyp: Int) extends Enemy(lyp) {
@@ -14,10 +14,8 @@ class TieFighter(lyp: Int) extends Enemy(lyp) {
 	 *  @param g graphics object to paint on */
 	override def paintComponent(g: Graphics) = {
 		if(xPos == -1 && yPos == -1) {
-			var generator = new Random(System.nanoTime())
-			xPos = generator.nextInt(600) + 1
-			generator = new Random(System.nanoTime())
-			yPos = generator.nextInt(299) + 1
+			xPos = Random.nextInt(600) + 1
+			yPos = Random.nextInt(299) + 1
 		}
 
 		g.drawImage(imgIcon.getImage(), xPos, yPos, null, null)

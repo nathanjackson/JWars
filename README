@@ -1,27 +1,10 @@
-JWars
-Created by: Nathan Jackson
+My CS241 project converted from Java to Scala.  JWars, a 2d shooter game.  I've
+included a makefile to build the project.  So simply run make to build the game
+and then make run to start it.
 
-JWars is a 2d shooter game written in Java using Swing and the abstract window toolkit (event handlers).  The project is currently a simple game and was originally created as a school project.  Current state of the project is very basic, very primitive.  In fact, there may be bugs.  Feel free to play with the code.  I do ask however that you mention my name in the comments!
+Per github, where I keep my code, I found that I was able to delete 295 lines
+of code from the project.  Much of this was because I don't need getters and
+setters in Scala which makes it very easy to access fields for every class.
 
-To see a demonstration of my project, here is a YouTube video: http://youtu.be/4ZQ7nGVL3vc
-
-To build:
-Requires:
-	scala
-	JRE 6 or greater
-	JDK 6 or greater
-	make
-
-1. Create a directory called classes
-2. Build: Run 'make'
-3. To Run: run 'make run'
-
-Somethings I'd like to see changed or improved:
-The XWing movement is sporadic.  I'm using event timers, I know that has something to do with it, but I haven't come up with a solution to fix it.
-Makefile fixed, I don't know much about them! :)
-Explosions don't occur at the point of impact
-Lasers move slowly (due to project requirements)
-No loss condition and a very simple win condition of 300 points
-Maybe add a main menu?
-Remove the bottom panel and fire button.  Draw the score on the actual field of play?
-Fixed sprites
+To build the game, simply run "make".
+To run the game, simply run "make run"

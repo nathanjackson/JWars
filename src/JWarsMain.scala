@@ -1,7 +1,7 @@
 import javax.swing._
 import java.awt._
 import java.awt.event._
-import java.util.Random
+import scala.util.Random
 
 /** Main Class for JWars.  Contains the main method and frame for the entire game */
 object JWarsMain extends JFrame {
@@ -31,8 +31,7 @@ object JWarsMain extends JFrame {
 			if(waitStatus < waitToCreateEnemy)
 				waitStatus += 1
 			else {
-				var generator = new Random(System.nanoTime());
-				var randint = generator.nextInt(100);
+				var randint = Random.nextInt(100);
 				if(randint < 75)
 					graphicsPane.addEnemy(new TieFighter(graphicsPane.getHeight() - 150));
 				else
